@@ -1,0 +1,66 @@
+<!-- navigation bar -->
+<div class="p-4">
+
+    <a style="text-decoration: none;" routerLink="/dashboard">
+        <a>
+            <h3><img src="https://media.istockphoto.com/id/462263703/photo/graphic-3d-icon-of-classic-bank-facade-on-white-background.jpg?s=612x612&w=0&k=20&c=wQxE7XKg0MCr37UlevTORg6r2n10hI7WfixnKkNOyRw="
+                    alt="Logo" width="45" height="40" class="d-inline-block align-text-top"> &nbsp; ONLINE BANKING APP
+            </h3>
+        </a>
+    </a>
+</div>
+
+<div class="container-fluid-mt-2">
+    <h1 class="text-primary  ">Transactions</h1>
+    <p style="text-align: justify;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro eos magnam, ipsam temporibus expedita quos
+        placeat iure voluptatum alias perferendis eius aspernatur cupiditate ducimus saepe dolorem nostrum provident
+        deleniti architecto? Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deserunt similique error vel
+        sunt libero tenetur cupiditate animi repellat illum, adipisci nulla iure vitae, neque nam quo illo recusandae
+        veritatis!</p>
+</div>
+<!-- trasacton body -->
+
+<div class="container border p-4 ">
+    <div class="row">
+        <div class="col-lg-4">
+            <h3 class="text-success">Transaction History</h3>
+        </div>
+        <div class="col-lg-4">
+       
+            <input (keyup)="search($event)" class="form-control"  id="search" type="text" placeholder="Search Transaction Type">
+        </div>
+        <div class="col-lg-4 ">
+            <input (click)="generatePDF()"  value="Export" class="btn btn-success" type="text">
+        </div>
+
+    </div>
+
+    <!-- table -->
+
+    <table class="table border mt-3 text-center">
+
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Transaction Type</th>
+                <th>From Account</th>
+                <th>To Account</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let transactions of allTrasactions |filter:searchKey:'type' ; let i=index" >
+                <td >{{i+1}}</td>
+                <td>{{transactions.type}}</td>
+                <td>{{transactions.fromAcno}}</td>
+                <td>{{transactions.toAcno}}</td>
+                <td>{{transactions.amount}}</td>
+            </tr>
+           
+        </tbody>
+    </table>
+
+
+
+</div>

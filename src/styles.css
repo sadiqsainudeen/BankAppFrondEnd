@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Kanit:wght@200;800&family=Lobster&family=Playfair+Display&display=swap');
+
+body {
+    font-family: 'Dancing Script', cursive;
+font-family: 'Kanit', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Playfair Display', serif;
+overflow-x: hidden;
+
+}

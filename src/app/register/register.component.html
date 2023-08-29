@@ -1,0 +1,54 @@
+<!--header -->
+<app-header></app-header>
+<!--header -->
+
+<div class="container mt-3">
+
+
+    <h2 style="background-color: rgb(222, 226, 215); border-radius: 50px;">Register Here</h2>
+    <p style="justify-content: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla et voluptas explicabo aperiam nesciunt ad laborum aspernatur voluptate? Quis exercitationem, laborum similique cum delectus dicta architecto fugit iste ipsam labore.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae eligendi maxime commodi dolorum libero nostrum veritatis explicabo earum, perferendis, laboriosam ea totam id quaerat consequatur omnis neque. Aperiam, ipsum animi!
+    </p>
+
+</div>
+
+
+<div class="row">
+
+    <div class="col-4"></div>
+    <div class="col-4">
+
+        <form  [formGroup]="registerForm" style="margin-top: 20px; margin-left: -20px;"
+            class="p-5  form-control" action="">
+
+
+            <div>
+                <input  name="uname" formControlName="uname" placeholder="User Name" class="form-control"  type="text">
+                <div *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched"  class="text-danger">Invalid User Name</div>
+    
+            </div>
+            &nbsp;
+            <div>
+                <input  name="acno" formControlName="acno" placeholder="Account Number" class="form-control"  type="text">
+                <div  *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched" class="text-danger">Invalid Account Number</div>
+    
+            </div>
+            &nbsp;
+            <div>
+                <input  name="pswd" formControlName="pswd" class="form-control" placeholder="Password" class="form-control"  type="password">
+            </div>
+            <div *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched" class="text-danger">Invalid Password</div>
+    
+            &nbsp;
+    
+            <div class="ms-2">
+                <button  (click)="register()"  class="btn btn-primary">Register</button>
+                &nbsp;
+                <p>Account already exist?<a  style="color: rgb(67, 59, 187);" routerLink="/"> &nbsp;Login</a></p>
+            </div> 
+    
+        </form>
+    </div>
+    <div class="col-4"></div>
+
+</div>

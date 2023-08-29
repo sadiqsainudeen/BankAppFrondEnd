@@ -1,0 +1,18 @@
+
+
+<div  *ngIf="item" class="container text-center border p-5 mt-5">
+
+<div style="margin-top: 150px ;" class="row">
+    <div class="col-lg-4"></div>
+    
+    <div class="col-lg-4">
+        <h4 class="mt-2 mb-2">Are  you sure,do you want to delete {{item}} account?</h4>
+        <button  (click)="deleteAcc()" class="btn btn-danger">YES</button> &nbsp;
+        <button (click)="cancel()" class="btn btn-success">NO</button>
+    </div>
+    
+    <div class="col-lg-4"></div>
+
+
+</div>
+</div>

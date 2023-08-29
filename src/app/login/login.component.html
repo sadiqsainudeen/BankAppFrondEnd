@@ -1,0 +1,44 @@
+<!--header -->
+<app-header></app-header>
+<!--header -->
+
+
+
+<div class="row">
+
+    <div class="col-7">
+        <img class=" ms-3 " style="margin-top: 70px; border-radius: 20px; width: 700px;"
+            src="https://images.moneycontrol.com/static-mcnews/2021/06/Bank-representational-shutterstock-770x433.jpg"
+            alt="">
+    </div>
+    <!-- form -->
+    <div class="col-5">
+
+
+        <form (ngSubmit)="login()" [formGroup]="loginForm" style="margin-top: 140px; height: 300px;  border: 1px black solid; margin-left: -20px;"
+            class="p-5 form-control" action="">
+            <div>
+                <input name="acno" formControlName="acno" class="form-control" placeholder="Account Number" type="text">
+                <div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched" class="text-danger">Invalid Account Number</div>
+
+            </div>
+            &nbsp;
+            <div>
+                <input name="pswd" formControlName="pswd" class="form-control" placeholder="Password" type="password">
+            </div>
+            <div *ngIf="this.loginForm.get('pswd')?.errors&&this.loginForm.get('pswd')?.touched" class="text-danger">Invalid Password</div>
+
+            
+            <div class="text-danger">{{errorMsg}}</div>
+            &nbsp;
+            <div class="ms-2">
+                <button (click)="login()" type="submit"  class="btn btn-primary">LOGIN <span *ngIf="successMsg" class="spinner-border text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </span></button>
+                &nbsp;
+                <p>New User? <a style="color: rgb(67, 59, 187);" routerLink="/register">Register</a></p>
+            </div>
+
+        </form>
+    </div>
+</div>
